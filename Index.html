@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Banking App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        #container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none; /* Verstecke den Container standardmäßig */
+        }
+        h1 {
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .data-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .data-label {
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .transaction-history {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .transaction-history th, .transaction-history td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .transaction-history th {
+            background-color: #f2f2f2;
+        }
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <h1>Bitte einloggen</h1>
+        <form id="loginForm" action="#">
+            <div class="form-group">
+                <label for="username">Benutzername:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Passwort:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <input type="submit" value="Login" class="button">
+        </form>
+    </div>
+    
+    <div id="container">
+        <h1>Willkommen bei Ihrer Online-Banking-App</h1>
+        
+        <div class="section">
+            <h2 class="section-title">Kundendaten</h2>
+            <div class="data-container">
+                <p><span class="data-label">IBAN:</span> DE12345678901234567890</p>
+                <p><span class="data-label">Kundennummer:</span> 123456</p>
+                <p><span class="data-label">Kartennummer:</span> 1234 5678 9012 3456</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Geldverlauf</h2>
+            <table class="transaction-history">
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Beschreibung</th>
+                        <th>Betrag</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01.03.2024</td>
+                        <td>Einzahlung</td>
+                        <td>€ 100,00</td>
+                    </tr>
+                    <tr>
+                        <td>05.03.2024</td>
+                        <td>Auszahlung</td>
+                        <td>€ -50,00</td>
+                    </tr>
+                    <!-- Weitere Transaktionen hier einfügen -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Geld überweisen</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="recipient">Empfänger:</label>
+                    <input type="text" id="recipient" name="recipient" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Betrag:</label>
+                    <input type="number" id="amount" name="amount" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Passwort:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <input type="submit" value="Überweisen" class="button">
+            </form>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Aktien und Investment</h2>
+            <!-- Hier können Informationen zu Aktien und Investment angezeigt werden -->
+            <p>Hier könnten Informationen zu Aktien und Investment angezeigt werden.</p>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Verhindere das Standard-Verhalten des Formulars
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            // Überprüfung von Benutzername und Passwort (vereinfacht)
+            if (username === "user" && password === "pass") {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('container').style.display = 'block';
+            } else {
+                alert("Ungültige Anmeldeinformationen. Bitte erneut versuchen.");
+            }
+        });
+    </script>
+</body>
+</html>

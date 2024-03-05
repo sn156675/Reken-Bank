@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Banking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Online Banking</h1>
+        <img src="bank_logo.png" alt="Bank Logo" width="100">
+        <form action="login.php" method="post">
+            <input type="text" name="username" placeholder="Benutzername oder E-Mail-Adresse" required>
+            <input type="password" name="password" placeholder="Passwort" required>
+            <input type="submit" value="Login">
+        </form>
+        <p><a href="forgot_password.php">Passwort vergessen?</a></p>
+        <p>Alternativer Login mit Face-ID, Fingerabdruck, etc.</p>
+        <p><a href="Startseite.html">Zurück zur Homepage</a></p>
+    </div>
+</body>
+</html>
